@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Лев Патрушев">
+  <meta name="description" content="О себе: футуролог и концепт-художник. Навыки и проекты будущего.">
+  <title>О себе — Лев Патрушев</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    h1, h2, h3 {
+      font-family: var(--heading-font);
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1 class="neon">О себе</h1>
+  <p>Лев Патрушев</p>
+  <p>Футуролог и концепт-художник</p>
+  <img class="profile-photo" src="img/photo.jpg" alt="Аватар: футуристический город с высотными зданиями, садами и водоёмами" width="160" height="160">
+  <p>Мне интересно представлять, как будет выглядеть мир будущего.
+    Я придумываю концепции городов, технологий и космических поселений.</p>
+  <button type="button" id="theme-toggle">Светлая тема</button>
+  <nav aria-label="Навигация по странице">
+    <a href="#skills">Навыки</a>
+    <a href="#projects">Проекты</a>
+    <a href="#technologies">Технологии</a>
+    <a href="#forecasts">Прогнозы</a>
+    <a href="#feedback">Обратная связь</a>
+  </nav>
+</header>
+
+<main>
+  <section id="skills">
+    <h2>Навыки</h2>
+    <ul>
+      <li>Создание концепт-артов городов и техники будущего.</li>
+      <li>Сценарное планирование: разработка разных вариантов будущего.</li>
+      <li>Анализ технологических и общественных трендов.</li>
+      <li>Визуализация идей с помощью эскизов и цифровых иллюстраций.</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Проекты</h2>
+    <p>Мои идеи футуристических концептов:</p>
+    <ol>
+      <li class="card" style="overflow: hidden;">
+        <div class="card-text neon"><strong>Город «Горизонт».</strong> Город будущего с вертикальными садами,
+          солнечными фасадами и общественным транспортом без водителей.</div>
+      </li>
+      <li class="card">
+        <div class="card-text neon"><strong>Колония «Аврора».</strong> Поселение на Марсе с защитными модулями,
+          теплицами и системой повторного использования воды.</div>
+      </li>
+      <li class="card">
+        <div class="card-text neon"><strong>Океаническая станция «Прилив».</strong> Плавучий научный комплекс
+          для изучения океана, использующий энергию волн.</div>
+      </li>
+      <li class="card">
+        <div class="card-text neon"><strong>Орбитальная верфь «Орбита».</strong> Космическая станция
+          для сборки и ремонта кораблей за пределами Земли.</div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="technologies">
+    <h2>Технологии будущего</h2>
+    <p>Учебные концепции: годы внедрения указаны как предположения.</p>
+    <div class="technologies">
+      <article class="card technology-card">
+        <div class="card-text neon">
+          <h3>Умные материалы</h3>
+          <p>Покрытия, которые самостоятельно устраняют небольшие повреждения техники и зданий.</p>
+        </div>
+        <p class="forecast-year">Год прогноза: <time datetime="2035">2035</time></p>
+      </article>
+      <article class="card technology-card">
+        <div class="card-text neon">
+          <h3>Термоядерная энергия</h3>
+          <p>Электростанции, использующие управляемый термоядерный синтез для снабжения городов.</p>
+        </div>
+        <p class="forecast-year">Год прогноза: <time datetime="2045">2045</time></p>
+      </article>
+      <article class="card technology-card">
+        <div class="card-text neon">
+          <h3>Новые аккумуляторы</h3>
+          <p>Более ёмкие накопители для электротранспорта и хранения солнечной энергии.</p>
+        </div>
+        <p class="forecast-year">Год прогноза: <time datetime="2030">2030</time></p>
+      </article>
+      <article class="card technology-card">
+        <div class="card-text neon">
+          <h3>Орбитальное производство</h3>
+          <p>Изготовление деталей и сборка космических аппаратов непосредственно на орбите.</p>
+        </div>
+        <p class="forecast-year">Год прогноза: <time datetime="2040">2040</time></p>
+      </article>
+    </div>
+  </section>
+
+  <div class="forecast-controls">
+    <button type="button" id="add-forecast">Добавить прогноз</button>
+    <button type="button" id="toggle-forecasts" aria-controls="forecasts" aria-expanded="true">Скрыть прогнозы</button>
+  </div>
+
+  <section id="forecasts">
+    <h2>Прогнозы по сферам</h2>
+    <p>Вероятности — условные авторские оценки для учебного макета, а не результаты исследования.</p>
+    <p id="forecast-count"></p>
+    <div class="forecast-grid" id="forecast-list"></div>
+  </section>
+
+  <aside>
+    <h2>Технология, которая изменит мир</h2>
+    <h3>Управляемый термоядерный синтез</h3>
+    <p>На мой взгляд, эта технология может дать человечеству новый источник энергии.
+      Я представляю будущее, в котором такие электростанции обеспечивают
+      энергией города и уменьшают зависимость от ископаемого топлива.</p>
+  </aside>
+
+  <form id="feedback" action="#feedback" method="get">
+    <h2>Обратная связь</h2>
+    <p>Учебная форма. Сообщения не сохраняются и не отправляются автору.</p>
+    <p>
+      <label for="name">Имя</label><br>
+      <input type="text" id="name" name="name" placeholder="Введите ваше имя">
+    </p>
+    <p>
+      <label for="email">Email</label><br>
+      <input type="email" id="email" name="email" placeholder="Введите ваш email">
+    </p>
+    <p>
+      <label for="message">Сообщение</label><br>
+      <textarea id="message" name="message" placeholder="Напишите сообщение"></textarea>
+    </p>
+    <button type="submit">Отправить</button>
+  </form>
+</main>
+
+<footer>
+  <p><small>&copy; 2026 Лев Патрушев. Все права защищены.</small></p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

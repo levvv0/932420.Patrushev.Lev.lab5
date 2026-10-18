@@ -1,0 +1,295 @@
+:root {
+  --background: #1d1d40;
+  --surface: #1f2337;
+  --text: #f1f5ff;
+  --accent: #00d9ff;
+  --secondary: #ed7bc7;
+  --body-font: Arial, sans-serif;
+  --heading-font: "Courier New", monospace;
+}
+
+body.light-theme {
+  --background: #f4f7fb;
+  --surface: #ffffff;
+  --text: #111827;
+  --accent: #005f73;
+  --secondary: #7a1f5c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  color: var(--text);
+  background-color: var(--background);
+  font-family: var(--body-font);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+header, main, footer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  position: relative;
+  min-height: 230px;
+  padding: 0 190px 24px 0;
+  border-bottom: 2px solid var(--accent);
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h1, h2, h3 {
+  color: var(--accent);
+}
+
+.profile-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--accent);
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 172px;
+  right: 0;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+nav a {
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+}
+
+section {
+  position: static;
+  margin: 28px 0;
+}
+
+aside, .card, .forecast-card, form {
+  background-color: var(--surface);
+  border: 1px solid var(--accent);
+}
+
+aside {
+  float: right;
+  width: 280px;
+  margin: 0 0 24px 28px;
+  padding: 24px;
+}
+
+ul, ol {
+  padding-left: 30px;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+.card, .forecast-card {
+  min-width: 0;
+  padding: 20px;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.technology-card {
+  flex: 0 0 calc((100% - 48px) / 4);
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.forecast-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px 0 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.delete-forecast {
+  margin-top: 8px;
+}
+
+.forecast-year, .probability {
+  color: var(--secondary);
+}
+
+mark {
+  color: var(--background);
+  background-color: var(--accent);
+}
+
+.neon {
+  text-shadow: 1px 0 var(--accent), -1px 0 var(--accent),
+  0 1px var(--accent), 0 -1px var(--accent);
+}
+
+.card:hover .card-text {
+  transform: translate(1px, -1px);
+  text-shadow: -2px 1px var(--accent), 2px -1px var(--secondary);
+}
+
+a {
+  color: var(--accent);
+}
+
+a:visited {
+  color: var(--secondary);
+}
+
+a:hover {
+  color: var(--text);
+}
+
+form {
+  margin: 30px 308px 30px 0;
+  padding: 27px;
+}
+
+input, textarea, button {
+  max-width: 100%;
+  font-family: var(--body-font);
+  font-size: 16px;
+  border: 2px solid var(--accent);
+  padding: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  max-width: 500px;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text);
+  opacity: 1;
+}
+
+textarea {
+  height: 130px;
+  resize: vertical;
+}
+
+a:focus, input:focus, textarea:focus, button:focus {
+  outline: 3px solid var(--secondary);
+}
+
+button {
+  color: var(--background);
+  background-color: var(--accent);
+}
+
+button:hover {
+  background-color: var(--text);
+}
+
+a:active {
+  color: var(--secondary);
+}
+
+button:active {
+  background-color: var(--secondary);
+}
+
+.neon:active {
+  text-shadow: none;
+}
+
+.card:active .card-text {
+  text-shadow: none;
+}
+
+footer {
+  clear: both;
+  padding: 20px 0;
+}
+
+@media (max-width: 1023px) {
+  .technology-card {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+
+  .forecast-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  aside {
+    float: none;
+    width: 100%;
+    margin: 28px 0;
+  }
+
+  form {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 599px) {
+  body {
+    padding: 16px;
+  }
+
+  header {
+    min-height: 0;
+    padding-right: 0;
+  }
+
+  .profile-photo {
+    position: static;
+  }
+
+  #theme-toggle {
+    position: static;
+    display: block;
+    margin: 12px 0 12px auto;
+  }
+
+  .technology-card {
+    flex-basis: 100%;
+  }
+
+  .forecast-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  aside, .card, .forecast-card, form {
+    padding: 16px;
+  }
+}
